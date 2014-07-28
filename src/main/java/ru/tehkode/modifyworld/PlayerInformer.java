@@ -1,6 +1,7 @@
 package ru.tehkode.modifyworld;
 
 import net.milkbowl.vault.chat.Chat;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -10,6 +11,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -87,6 +89,7 @@ public class PlayerInformer {
 	}
 
 	
+	@SuppressWarnings("deprecation")
 	private String getMessageVault(Player player, String permission) {
 		Chat chat = Bukkit.getServer().getServicesManager().load(Chat.class);
 		if (chat != null) {

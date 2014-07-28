@@ -36,10 +36,9 @@ import org.bukkit.event.player.*;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.material.SpawnEgg;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.util.Vector;
+
 import ru.tehkode.modifyworld.ModifyworldListener;
 import ru.tehkode.modifyworld.PlayerInformer;
 
@@ -131,7 +130,7 @@ public class PlayerListener extends ModifyworldListener {
 	}
 
 	@EventHandler(priority = EventPriority.LOW)
-	public void onPlayerChat(PlayerChatEvent event) {
+	public void onPlayerChat(AsyncPlayerChatEvent event) {
 		if (permissionDenied(event.getPlayer(), "modifyworld.chat")) {
 			event.setCancelled(true);
 		}
@@ -240,6 +239,7 @@ public class PlayerListener extends ModifyworldListener {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@EventHandler(priority = EventPriority.LOW)
 	public void onPlayerInteract(PlayerInteractEvent event) {
 		Action action = event.getAction();
@@ -272,6 +272,8 @@ public class PlayerListener extends ModifyworldListener {
 						event.setUseItemInHand(Result.DENY);
 					}
 					return; // no need to check further
+			default:
+				break;
 			}
 		}
 

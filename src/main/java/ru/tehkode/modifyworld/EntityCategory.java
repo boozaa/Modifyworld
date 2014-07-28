@@ -21,10 +21,11 @@ package ru.tehkode.modifyworld;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.bukkit.entity.*;
 
-
-public enum EntityCategory {
+@SuppressWarnings("unchecked")
+public enum EntityCategory {	
 	PLAYER("player", Player.class),
 	ITEM("item", Item.class),
 	ANIMAL("animal", Animals.class, Squid.class),

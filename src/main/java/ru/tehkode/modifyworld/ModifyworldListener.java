@@ -90,6 +90,7 @@ public abstract class ModifyworldListener implements Listener {
 	}
 
 	// Functional programming fuck yeah
+	@SuppressWarnings("deprecation")
 	private String getMaterialPermission(Material type) {
 		return this.useMaterialNames ? formatEnumString(type.name()) : Integer.toString(type.getId());
 	}
@@ -98,10 +99,12 @@ public abstract class ModifyworldListener implements Listener {
 		return getMaterialPermission(type) + (checkMetadata && metadata > 0 ? ":" + metadata : "");
 	}
 
+	@SuppressWarnings("deprecation")
 	private String getBlockPermission(Block block) {
 		return getMaterialPermission(block.getType(), block.getData());
 	}
 
+	@SuppressWarnings("deprecation")
 	public String getItemPermission(ItemStack item) {
 		return getMaterialPermission(item.getType(), item.getData().getData());
 	}

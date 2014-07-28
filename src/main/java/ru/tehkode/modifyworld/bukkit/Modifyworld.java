@@ -130,7 +130,8 @@ public class Modifyworld extends JavaPlugin {
         return ret;
     }
 
-    private YamlConfiguration loadBaseLanguage(String path, Locale locale) throws IOException, InvalidConfigurationException {
+    @SuppressWarnings("deprecation")
+	private YamlConfiguration loadBaseLanguage(String path, Locale locale) throws IOException, InvalidConfigurationException {
         InputStream load = getResource("lang/" + locale.getLanguage() + "/" + path);
         if (load != null) {
             YamlConfiguration conf = new YamlConfiguration();
@@ -145,7 +146,8 @@ public class Modifyworld extends JavaPlugin {
         return null;
     }
 
-    private YamlConfiguration loadUnlocalized(String path) throws IOException, InvalidConfigurationException {
+    @SuppressWarnings("deprecation")
+	private YamlConfiguration loadUnlocalized(String path) throws IOException, InvalidConfigurationException {
         InputStream load = getResource(path);
         if (load != null) {
             YamlConfiguration conf = new YamlConfiguration();
@@ -159,7 +161,8 @@ public class Modifyworld extends JavaPlugin {
         return getLocalizedConfig(path, Locale.getDefault());
     }
 
-    public YamlConfiguration getLocalizedConfig(String path, Locale locale) throws InvalidConfigurationException, IOException {
+    @SuppressWarnings("deprecation")
+	public YamlConfiguration getLocalizedConfig(String path, Locale locale) throws InvalidConfigurationException, IOException {
         YamlConfiguration base = new YamlConfiguration();
         InputStream load =  getResource("lang/" + locale.toString() + "/" + path); // Country-specific
         if (load != null) {
@@ -199,6 +202,7 @@ public class Modifyworld extends JavaPlugin {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void reloadConfig() {
 		this.config = new YamlConfiguration();
