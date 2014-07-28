@@ -24,6 +24,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import ru.tehkode.modifyworld.ModifyworldListener;
 import ru.tehkode.modifyworld.PlayerInformer;
 import ru.tehkode.modifyworld.handlers.BlockListener;
@@ -46,6 +47,7 @@ import java.util.Locale;
  */
 public class Modifyworld extends JavaPlugin {
 
+	@SuppressWarnings("unchecked")
 	protected final static Class<? extends ModifyworldListener>[] LISTENERS = new Class[]{
 		PlayerListener.class,
 		EntityListener.class,
