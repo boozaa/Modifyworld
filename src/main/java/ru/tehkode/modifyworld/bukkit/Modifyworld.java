@@ -100,6 +100,7 @@ public class Modifyworld extends JavaPlugin {
 		config.set("check-metadata", true);
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	protected void registerListeners() {
 		for (Class listenerClass : LISTENERS) {
 			try {
